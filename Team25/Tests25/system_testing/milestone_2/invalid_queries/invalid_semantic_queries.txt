@@ -1,0 +1,30 @@
+1 - invalid entity for calls
+procedure p1;assign a1;
+Select p1 such that Calls(p1, a1)
+SemanticError
+5000
+2 - invalid entity for calls
+procedure p1;assign a1;
+Select p1 such that Calls(a1, p1)
+SemanticError
+5000
+3 - invalid entity for calls star
+procedure p1;assign a1;
+Select p1 such that Calls*(p1, a1)
+SemanticError
+5000
+4 - invalid entity for calls star
+procedure p1;assign a1;
+Select p1 such that Calls*(a1, p1)
+SemanticError
+5000
+5 - invalid entity for calls
+stmt p1;
+Select p1 such that Calls("x", p1)
+SemanticError
+5000
+6 - invalid entity for calls star
+stmt p1;
+Select p1 such that Calls*("x", p1)
+SemanticError
+5000

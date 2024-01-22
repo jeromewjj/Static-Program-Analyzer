@@ -1,0 +1,95 @@
+1 - Select Next(_,_) returns true
+if ifs;
+Select ifs such that Next(_,_)
+4, 8, 13
+5000
+2 - Select Next(_, IDENT) returns true
+while w;
+Select w such that Next(_,2)
+5, 9, 12
+5000
+3 - Select Next(_, IDENT) returns false
+while w;
+Select w such that Next(_,1)
+none
+5000
+4 - Select Next(IDENT, _) returns true
+if ifs;
+Select ifs such that Next(1,_)
+4, 8, 13
+5000
+5 - Select Next(IDENT, _) returns true
+if ifs;while w;
+Select <ifs,w.stmt#> such that Next(6,_)
+4 5, 4 9, 4 12, 8 5, 8 9, 8 12, 13 5, 13 9, 13 12
+5000
+6 - Select Next(IDENT, _) returns false
+while w;
+Select w such that Next(11,_)
+none
+5000
+7 - Select Next(IDENT, IDENT) returns true
+if ifs;
+Select ifs such that Next(2, 3)
+4, 8, 13
+5000
+8 - Select Next(IDENT, IDENT) returns true
+procedure p;
+Select p.procName such that Next(7, 5)
+Bumblebee, Anya
+5000
+9 - Select Next(IDENT, IDENT) returns true
+procedure p;
+Select p.procName such that Next(4, 8)
+Bumblebee, Anya
+5000
+10 - Select Next(IDENT, IDENT) returns false
+procedure p;
+Select p.procName such that Next(4,8)
+Anya, Bumblebee
+5000
+11 - Select Next(SYN, _)
+assign a;
+Select a such that Next(a,_)
+6, 7, 10, 14, 15
+5000
+12 - Select Next(SYN, SYN)
+assign a; while w;
+Select <w,a> such that Next(a,    w)
+5 7, 9 10, 12 14, 12 15
+5000
+13 - Select Next(SYN, SYN)
+if ifs; while w;
+Select <ifs, w> such that Next(ifs,w)
+4 5, 8 9
+5000
+14 - Select Next(SYN, SYN) no result
+stmt s;
+Select s such that Next(s,s)
+none
+5000
+15 - Select Next(SYN, IDENT) returns true
+assign a;
+Select <a> such that Next(a,5)
+7
+5000
+16 - Select Next(SYN, IDENT) no result
+assign a;
+Select <a> such that Next(a,3)
+none
+5000
+17 - Select Next(IDENT, SYN)
+if ifs;
+Select ifs such that Next(3,ifs)
+4
+5000
+18 - Select Next(IDENT, SYN) is true
+if ifs;
+Select BOOLEAN such that Next(3,ifs)
+TRUE
+5000
+19 - Select Next(IDENT, SYN) is true
+stmt s;
+Select BOOLEAN such that Next(11,_)
+FALSE
+5000

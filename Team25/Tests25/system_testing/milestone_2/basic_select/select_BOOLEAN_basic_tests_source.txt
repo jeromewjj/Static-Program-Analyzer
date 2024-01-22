@@ -1,0 +1,11 @@
+procedure bumblebee {
+  read y;
+  if (x>0) then {
+    while (i>0) {
+      x = y * 3 + 2 * z;
+      i = i - 2; }
+    x = x - 1;
+    z = z + y; }
+  else {
+    z = 0; }
+  z = z + y + i; }

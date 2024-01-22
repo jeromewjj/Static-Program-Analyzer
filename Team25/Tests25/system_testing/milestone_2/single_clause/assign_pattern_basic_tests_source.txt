@@ -1,0 +1,7 @@
+procedure bumblebee {
+    read x;
+    read y;
+    x = y + z;
+    digit = ((y + 2) * 15);
+    sum = (((y + 2) * 15) / 20) * z;
+}

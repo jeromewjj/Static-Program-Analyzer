@@ -1,0 +1,45 @@
+1 - select all assignments
+assign a;
+Select a pattern a (_,_)
+3, 4, 5
+5000
+2 - select assign with variable name
+assign a;
+Select a pattern a("digit"   , _  )
+4
+5000
+3 - select assign with variable name
+assign a;
+Select a pattern a("x  "   , _  )
+3
+5000
+4 - select assign with variable name has no result
+assign a;
+Select a pattern a("y"   , _  )
+none
+5000
+5 - select exact expression has result
+assign a;
+Select a pattern a   (  _, "   ((y + 2) * 15)")
+4
+5000
+6 - select sub expression has result
+assign a;
+Select a pattern a (  _  , _  "((y + 2) * 15)"  _)
+4, 5
+5000
+7 - select sub expression has result
+assign a;
+Select a pattern a   (  _  , _  "     y + 2   "  _)
+4, 5
+5000
+9 - select sub expression no result
+assign a;
+Select a pattern a   (  _  , _  "x+y  "  _)
+none
+5000
+9 - select sub expression no result
+assign a;
+Select a pattern a   (  _  , _  "20 * z"  _)
+none
+5000

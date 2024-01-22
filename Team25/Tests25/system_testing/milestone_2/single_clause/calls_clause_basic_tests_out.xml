@@ -1,0 +1,99 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>single_clause</name><parsing_time_taken>2.734000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id ReturnTuple="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Calls(p, _) when unrestricted is True">1</id><querystr><![CDATA[procedure p; Select p.procName such that Calls (_,_)]]></querystr>
+<stuans>Bumblebee,Anya,Third,Fourth</stuans>
+<correct>Bumblebee,Anya,Third,Fourth</correct>
+<time_taken>0.921000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Calls(_,IDENT) is true">2</id><querystr><![CDATA[procedure p; Select p.procName such that Calls(_,"Fourth")]]></querystr>
+<stuans>Bumblebee,Anya,Third,Fourth</stuans>
+<correct>Bumblebee,Anya,Third,Fourth</correct>
+<time_taken>0.749000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Calls(_,IDENT) is false">3</id><querystr><![CDATA[procedure p; Select p.procName such that Calls(_,"Bumblebee")]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.622000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Boolean Calls(IDENT,_) is true">4</id><querystr><![CDATA[procedure p; Select BOOLEAN such that Calls("Anya",_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.694000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Boolean Calls(IDENT,_) is false">5</id><querystr><![CDATA[procedure p; Select BOOLEAN such that Calls("Fourth",_)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.588000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Calls(IDENT,IDENT) is true">6</id><querystr><![CDATA[procedure p; Select p such that Calls("Anya","Third")]]></querystr>
+<stuans>Bumblebee,Anya,Third,Fourth</stuans>
+<correct>Bumblebee,Anya,Third,Fourth</correct>
+<time_taken>0.497000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Calls(IDENT,IDENT) is false">7</id><querystr><![CDATA[procedure p; Select p such that Calls("Fourth","Third")]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.563000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Calls(_,PROC-SYN) has a result">8</id><querystr><![CDATA[procedure p; Select p such that Calls(_,p)]]></querystr>
+<stuans>Anya,Third,Fourth</stuans>
+<correct>Anya,Third,Fourth</correct>
+<time_taken>0.549000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="2" UnnamedVar="2" SuchThat="1" CondNum="6" RelNum="2" comment="Calls(_,PROC-SYN) has no result">9</id><querystr><![CDATA[procedure p; Select p such that Calls(_,p) and Calls(_,"Bumblebee")]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.526000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" SuchThat="1" CondNum="3" RelNum="1" comment="Calls(IDENT,PROC-SYN) has result">10</id><querystr><![CDATA[procedure p; Select p.procName such that Calls("Third",p)]]></querystr>
+<stuans>Fourth</stuans>
+<correct>Fourth</correct>
+<time_taken>0.454000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" SuchThat="1" CondNum="3" RelNum="1" comment="Calls(IDENT,PROC-SYN) has no result">11</id><querystr><![CDATA[procedure p; Select p.procName such that Calls("Fourth",p)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.508000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Calls(PROC-SYN,_) has result">12</id><querystr><![CDATA[procedure p; Select p.procName such that Calls(p,_)]]></querystr>
+<stuans>Bumblebee,Anya,Third</stuans>
+<correct>Bumblebee,Anya,Third</correct>
+<time_taken>0.500000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Calls="1" UnnamedVar="1" SuchThat="1" With="1" CondNum="5" RelNum="1" comment="Calls(PROC-SYN,_) has no result">13</id><querystr><![CDATA[procedure p;variable v; Select p.procName such that Calls(p,_) with p.procName=v.varName]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.611000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

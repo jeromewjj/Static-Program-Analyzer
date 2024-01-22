@@ -1,0 +1,50 @@
+1 - invalid design entity
+procedure p1, p2;
+Select p1 such that Call( p1, p2)
+SyntaxError
+5000
+2 - invalid design entity
+procedure p1, p2;
+Select p1 such that Call*( p1, p2)
+SyntaxError
+5000
+3 - invalid entity for calls
+procedure p1, p2;
+Select p1 such that Calls( " 100x ", p1)
+SyntaxError
+5000
+4 - invalid entity for calls star
+procedure p1, p2;
+Select p1 such that Calls*( " 100x ", p1)
+SyntaxError
+5000
+5 - invalid entity for calls
+procedure p1, p2;
+Select p1 such that Calls(p1, 2y)
+SyntaxError
+5000
+6 - invalid entity for calls star
+procedure p1, p2;
+Select p1 such that Calls*(1, y)
+SyntaxError
+5000
+7 - invalid entity for calls star
+procedure p1, p2;
+Select p1 such that Calls*( 22, _)
+SyntaxError
+5000
+8 - invalid entity for calls star
+procedure p1, p2;
+Select p1 such that Calls*(___, 20)
+SyntaxError
+5000
+9 - invalid design entity
+procedure p1, p2;
+Select p1 such that Call(_, _)
+SyntaxError
+5000
+10 - invalid design entity
+procedure p1, p2;
+Select p1 such that Call*(_, _)
+SyntaxError
+5000

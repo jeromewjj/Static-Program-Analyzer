@@ -1,0 +1,190 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>single_clause</name><parsing_time_taken>2.345000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(_,_) is true">1</id><querystr><![CDATA[ Select BOOLEAN such that Affects(_,_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.840000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(_,IDENT) is true">2</id><querystr><![CDATA[ Select BOOLEAN such that Affects(_,7)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.678000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(_,IDENT) is false">3</id><querystr><![CDATA[ Select BOOLEAN such that Affects(_,1)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.614000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(IDENT,_) is true">4</id><querystr><![CDATA[ Select BOOLEAN such that Affects(6,_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.611000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(IDENT,_) is false">5</id><querystr><![CDATA[ Select BOOLEAN such that Affects(10,_)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.837000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">6</id><querystr><![CDATA[ Select BOOLEAN such that Affects(6,6)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.756000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">7</id><querystr><![CDATA[ Select BOOLEAN such that Affects(6,7)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.546000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">8</id><querystr><![CDATA[ Select BOOLEAN such that Affects(7,6)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.457000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">9</id><querystr><![CDATA[ Select BOOLEAN such that Affects(11,13)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.423000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">10</id><querystr><![CDATA[ Select BOOLEAN such that Affects(11,15)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.385000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">11</id><querystr><![CDATA[ Select BOOLEAN such that Affects(17,20)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.504000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">12</id><querystr><![CDATA[ Select BOOLEAN such that Affects(17,22)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.460000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is true">13</id><querystr><![CDATA[ Select BOOLEAN such that Affects(22, 23)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.500000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">14</id><querystr><![CDATA[ Select BOOLEAN such that Affects(22,25)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.423000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">15</id><querystr><![CDATA[ Select BOOLEAN such that Affects(21,28)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.425000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">16</id><querystr><![CDATA[ Select BOOLEAN such that Affects(7,17)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.421000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">17</id><querystr><![CDATA[ Select BOOLEAN such that Affects(6,9)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.428000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">18</id><querystr><![CDATA[ Select BOOLEAN such that Affects(1,2)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.380000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">19</id><querystr><![CDATA[ Select BOOLEAN such that Affects(31,30)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.394000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">20</id><querystr><![CDATA[ Select BOOLEAN such that Affects(14,15)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.417000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">21</id><querystr><![CDATA[ Select BOOLEAN such that Affects(17,19)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.361000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="SelectAffects(IDENT,IDENT) is false">23</id><querystr><![CDATA[ Select BOOLEAN such that Affects(5,6)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.388000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Affects(IDENT,IDENT) is false">24</id><querystr><![CDATA[ Select BOOLEAN such that Affects(7,11)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.379000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(_,IDENT) is false">25</id><querystr><![CDATA[ Select BOOLEAN such that Affects(_,1)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.377000</time_taken>
+<passed/>
+</query>
+<query>
+<id Affects="1" ReturnBoolean="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(_,IDENT) is false">26</id><querystr><![CDATA[ Select BOOLEAN such that Affects(_,6)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.501000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Affects="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Affects(_,SYN) is true">27</id><querystr><![CDATA[assign a; Select a such that Affects(_,a)]]></querystr>
+<stuans>22,7,28,20,17,27,30,13,23</stuans>
+<correct>7,13,17,20,22,23,27,28,30</correct>
+<time_taken>0.418000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

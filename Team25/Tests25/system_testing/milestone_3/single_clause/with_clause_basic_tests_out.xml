@@ -1,0 +1,92 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>single_clause</name><parsing_time_taken>1.178000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">1</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select c.stmt# with c.procName = "Anya"]]></querystr>
+<stuans>8</stuans>
+<correct>8</correct>
+<time_taken>0.467000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Modifies="1" SuchThat="1" With="1" CondNum="4" RelNum="1" comment="comment">2</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select s.stmt# such that Modifies(s, v) with v.varName = "x"]]></querystr>
+<stuans>32,5,1,17,8,4,10,18,6,11,19,24</stuans>
+<correct>5,24,18,17,32,11,19,8,10,6,4,1</correct>
+<time_taken>0.477000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Parentstar="2" SuchThat="1" With="2" CondNum="6" RelNum="2" comment="comment">3</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select i.stmt# such that Parent*(i, c) and Parent*(i, r) with r.varName = "y" with c.procName = "Bumblebee"]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.518000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">4</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select a with x.value = a.stmt#]]></querystr>
+<stuans>7</stuans>
+<correct>7</correct>
+<time_taken>0.540000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="comment">5</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select a.stmt# pattern a(_, "a")]]></querystr>
+<stuans>29</stuans>
+<correct>29</correct>
+<time_taken>0.935000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" With="1" CondNum="4" RelNum="0" comment="comment">6</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select a.stmt# pattern a(_, "x") with a.stmt# = 25]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.478000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Parent="1" UnnamedVar="3" Pattern="2" SuchThat="1" CondNum="8" RelNum="1" comment="comment">7</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select i.stmt# such that Parent(i, a) pattern i("x", _, _) pattern a(_, "y")]]></querystr>
+<stuans>27</stuans>
+<correct>27</correct>
+<time_taken>0.562000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">8</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select p.stmt# with p.varName = "x"]]></querystr>
+<stuans>16</stuans>
+<correct>16</correct>
+<time_taken>0.478000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">9</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select w.stmt# with p.varName = "x"]]></querystr>
+<stuans>5,17,12</stuans>
+<correct>5,12,17</correct>
+<time_taken>0.412000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">10</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select r.stmt# with r.varName = "y"]]></querystr>
+<stuans>2,25</stuans>
+<correct>2,25</correct>
+<time_taken>0.429000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">11</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select c.procName with c.procName = "Anya"]]></querystr>
+<stuans>Anya</stuans>
+<correct>Anya</correct>
+<time_taken>0.424000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" With="1" CondNum="2" RelNum="0" comment="comment">12</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select proc.procName with proc.procName = "Anya"]]></querystr>
+<stuans>Anya</stuans>
+<correct>Anya</correct>
+<time_taken>0.420000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

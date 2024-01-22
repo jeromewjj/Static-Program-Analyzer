@@ -1,0 +1,60 @@
+1 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select c.stmt# with c.procName = "Anya"
+8
+5000
+2 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select s.stmt# such that Modifies(s, v) with v.varName = "x"
+5, 24, 18, 17, 32, 11, 19, 8, 10, 6, 4, 1
+5000
+3 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select i.stmt# such that Parent*(i, c) and Parent*(i, r) with r.varName = "y" with c.procName = "Bumblebee"
+none
+5000
+4 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select a with x.value = a.stmt#
+7
+5000
+5 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select a.stmt# pattern a(_, "a")
+29
+5000
+6 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select a.stmt# pattern a(_, "x") with a.stmt# = 25
+none
+5000
+7 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select i.stmt# such that Parent(i, a) pattern i("x", _, _) pattern a(_, "y")
+27
+5000
+8 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select p.stmt# with p.varName = "x"
+16
+5000
+9 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select w.stmt# with p.varName = "x"
+5, 12, 17
+5000
+10 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select r.stmt# with r.varName = "y"
+2, 25
+5000
+11 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select c.procName with c.procName = "Anya"
+Anya
+5000
+12 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select proc.procName with proc.procName = "Anya"
+Anya
+5000

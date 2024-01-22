@@ -1,0 +1,40 @@
+1 - comment
+procedure p; read r1, r2; if i; variable v; assign a1, a2;
+Select <r1, r2, a1, a2> such that Follows(r1, a1) and Follows(a1, r2) and Next*(i, a2) and Parent(i, r1) and Parent(i, r2)
+none
+5000
+2 - comment
+stmt s1, s2;
+Select s1 such that Modifies(s2, "i") and Parent*(s1, s2)
+6
+5000
+3 - comment
+stmt s;
+Select s such that Modifies(s, "i") and Uses(s, "i")
+3, 6, 9
+5000
+4 - comment
+stmt s; assign a;
+Select <s, a> such that Affects(s, a)
+14 15, 4 7, 13 14, 7 15, 9 9, 13 15, 12 13, 7 13, 7 7, 11 13, 5 13, 11 15, 7 11, 5 9, 4 13, 4 15, 9 13, 4 11, 16 17
+5000
+5 - comment
+procedure p; call c1, c2;
+Select c1 such that Calls*(p, "Third") and Next*(c1, c2)
+8
+5000
+6 - comment
+stmt s; procedure p;
+Select BOOLEAN such that Affects(s, s) and Calls*(p, p)
+FALSE
+5000
+7 - comment
+stmt s;
+Select s such that Affects(s, s) and Next*(s, s)
+7, 9
+5000
+8 - comment
+stmt s;
+Select s such that Affects(_, _) and Next*(_, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
+5000

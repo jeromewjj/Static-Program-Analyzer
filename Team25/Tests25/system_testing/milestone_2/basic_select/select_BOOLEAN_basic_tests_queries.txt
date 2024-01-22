@@ -1,0 +1,50 @@
+1 - no syn declarations and no constraints
+assign a; if i;
+Select BOOLEAN
+TRUE
+5000
+2 - no syn declarations and returns true according to the boolean constraint
+assign a; if i;
+Select BOOLEAN such that Follows(_,_)
+TRUE
+5000
+3 - returns true according to the boolean constraint
+assign a; if i;
+Select BOOLEAN such that Parent(_,_)
+TRUE
+5000
+4 - returns true according to a non-empty evaluation result
+if i; assign a;
+Select BOOLEAN such that Follows(i, a)
+TRUE
+5000
+4 - returns false according to the boolean constraint
+if i; assign a;
+Select BOOLEAN such that Follows(9,_)
+FALSE
+5000
+5 - returns false according to the empty evaluation result
+assign a;
+Select BOOLEAN such that Follows(a,8)
+FALSE
+5000
+6 - returns true according to the multi-clause evaluation result
+assign a; if i;
+Select BOOLEAN such that Follows(_,a) and Follows(i,_)
+TRUE
+5000
+7 - returns false according to the multi-clause evaluation result
+assign a;
+Select BOOLEAN such that Follows(a,8) and Follows(9,_)
+FALSE
+5000
+8 - returns true according to the multi-clause evaluation result with a boolean constraint
+if i;
+Select BOOLEAN such that Follows(i,_) and Follows(_,_)
+TRUE
+5000
+9 - returns false according to the multi-clause evaluation result with a boolean constraint
+assign a;
+Select BOOLEAN such that Follows(_, a) and Follows(9,_)
+FALSE
+5000

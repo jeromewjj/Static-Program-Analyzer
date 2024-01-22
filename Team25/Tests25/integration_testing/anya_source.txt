@@ -1,0 +1,23 @@
+procedure Bumblebee {
+    read x;
+    read y;
+    read z;
+    if (x > 2) then {
+        while (3 == 4) {
+        x = 1 + x + y;
+        y = x + 1;
+        call Anya;
+        z = x + 1;} }
+    else {
+     if (x == 5) then {
+     x = 3 + y;
+         while (x == y) {
+             y = 2 + x; } }
+        else {
+        y = x + 1; } }
+     z = 3 + x;
+}
+
+procedure Anya {
+    x = y + 1;
+}

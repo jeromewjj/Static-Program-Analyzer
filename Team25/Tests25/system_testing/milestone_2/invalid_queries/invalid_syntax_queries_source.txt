@@ -1,0 +1,59 @@
+procedure Bumblebee {
+    read x;
+    read y;
+    read z;
+    if (x > 2) then {
+        while (3 == 4) {
+        x = 1;
+        y = 3; }
+        call Anya; }
+    else {
+     if (x == 5) then {
+         while (x == y) {
+             x = 2; } }
+        else {
+       z = 3; } }
+}
+
+procedure Anya {
+    while (x == 0) {
+        if (b == a) then {
+            z = 7;
+        }
+        else {
+            a = 3;
+            call Third;
+        }
+        call Fourth;
+    }
+}
+
+procedure Third {
+    read x;
+    read y;
+    read z;
+    if (x > 2) then {
+        while (3 == 4) {
+        x = 1;
+        y = 3; }
+        call Fourth; }
+    else {
+     if (x == 5) then {
+         while (x == y) {
+             x = 2; } }
+        else {
+       z = 3; } }
+}
+
+procedure Fourth {
+    if (x < 2) then {
+        while (y == 4) {
+        x = 3;
+        y = 2; } }
+    else {
+     if (x == 5) then {
+         while (x == y) {
+             x = 2; } }
+        else {
+       z = 3; } }
+}

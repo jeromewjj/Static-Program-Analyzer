@@ -1,0 +1,25 @@
+1 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select BOOLEAN such that not Calls ("First", "Second")
+FALSE
+5000
+3 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select proc such that not Calls* (proc, "Third")
+Third
+5000
+4 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select w pattern not w("y", _)
+6
+5000
+6 - comment
+print pr; call c; read r; while w; if i; procedure p, q; stmt s; assign a; constant x; variable v;
+Select p such that not Calls* (p, q)
+First, Second, Third
+5000
+7 - comment
+print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v;
+Select <w, v> pattern not w(v, _)
+6 v, 6 x, 6 y, 6 z
+5000

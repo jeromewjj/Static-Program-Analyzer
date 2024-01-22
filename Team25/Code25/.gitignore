@@ -1,0 +1,9 @@
+# Ignore build folder
+build/
+
+#ignore vs code settings
+.vscode/
+
+# untrack *.dat from Tests25
+../Tests25/*.dat
+/src/unit_testing/CMakeCache.txt

@@ -1,0 +1,15 @@
+1 - comment
+stmt a;
+Select a
+1
+5000
+2 - comment
+stmt a;
+Select a
+1
+5000
+3 - comment
+stmt a;
+Select a
+1
+5000

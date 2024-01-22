@@ -1,0 +1,78 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>basic_select</name><parsing_time_taken>0.831000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id ReturnBoolean="1" CondNum="1" RelNum="0" comment="no syn declarations and no constraints">1</id><querystr><![CDATA[assign a; if i; Select BOOLEAN]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.625000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="no syn declarations and returns true according to the boolean constraint">2</id><querystr><![CDATA[assign a; if i; Select BOOLEAN such that Follows(_,_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.570000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Parent="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="returns true according to the boolean constraint">3</id><querystr><![CDATA[assign a; if i; Select BOOLEAN such that Parent(_,_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.740000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="1" SuchThat="1" CondNum="3" RelNum="1" comment="returns true according to a non-empty evaluation result">4</id><querystr><![CDATA[if i; assign a; Select BOOLEAN such that Follows(i, a)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.596000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="returns false according to the boolean constraint">4</id><querystr><![CDATA[if i; assign a; Select BOOLEAN such that Follows(9,_)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.597000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="1" SuchThat="1" CondNum="3" RelNum="1" comment="returns false according to the empty evaluation result">5</id><querystr><![CDATA[assign a; Select BOOLEAN such that Follows(a,8)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.552000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="2" UnnamedVar="2" SuchThat="1" CondNum="6" RelNum="2" comment="returns true according to the multi-clause evaluation result">6</id><querystr><![CDATA[assign a; if i; Select BOOLEAN such that Follows(_,a) and Follows(i,_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.530000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="2" UnnamedVar="1" SuchThat="1" CondNum="5" RelNum="2" comment="returns false according to the multi-clause evaluation result">7</id><querystr><![CDATA[assign a; Select BOOLEAN such that Follows(a,8) and Follows(9,_)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.492000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="2" UnnamedVar="2" SuchThat="1" CondNum="6" RelNum="2" comment="returns true according to the multi-clause evaluation result with a boolean constraint">8</id><querystr><![CDATA[if i; Select BOOLEAN such that Follows(i,_) and Follows(_,_)]]></querystr>
+<stuans>TRUE</stuans>
+<correct>TRUE</correct>
+<time_taken>0.482000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Follows="2" UnnamedVar="2" SuchThat="1" CondNum="6" RelNum="2" comment="returns false according to the multi-clause evaluation result with a boolean constraint">9</id><querystr><![CDATA[assign a; Select BOOLEAN such that Follows(_, a) and Follows(9,_)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.416000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>single_clause</name><parsing_time_taken>0.626000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id ReturnBoolean="1" Calls="1" SuchThat="1" CondNum="3" RelNum="1" comment="comment">1</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select BOOLEAN such that not Calls ("First", "Second")]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.446000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Callsstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="comment">3</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select proc such that not Calls* (proc, "Third")]]></querystr>
+<stuans>Third</stuans>
+<correct>Third</correct>
+<time_taken>0.460000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="comment">4</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select w pattern not w("y", _)]]></querystr>
+<stuans>6</stuans>
+<correct>6</correct>
+<time_taken>0.474000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Callsstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="comment">6</id><querystr><![CDATA[print pr; call c; read r; while w; if i; procedure p, q; stmt s; assign a; constant x; variable v; Select p such that not Calls* (p, q)]]></querystr>
+<stuans>First,Second,Third</stuans>
+<correct>First,Second,Third</correct>
+<time_taken>0.458000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="comment">7</id><querystr><![CDATA[print p; call c; read r; while w; if i; procedure proc; stmt s; assign a; constant x; variable v; Select <w, v> pattern not w(v, _)]]></querystr>
+<stuans>6 x,6 z,6 y,6 v</stuans>
+<correct>6 v,6 x,6 y,6 z</correct>
+<time_taken>0.392000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

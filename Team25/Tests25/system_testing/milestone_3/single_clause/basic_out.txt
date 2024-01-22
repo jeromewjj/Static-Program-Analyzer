@@ -1,0 +1,164 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>autotester</name><parsing_time_taken>5.660000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(_, _) returns true">1</id><querystr><![CDATA[if ifs; Select ifs such that Next*(_,_)]]></querystr>
+<stuans>4,10</stuans>
+<correct>4,10</correct>
+<time_taken>1.267000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(_, IDENT) returns true">2</id><querystr><![CDATA[while w; Select w such that Next*(_,8)]]></querystr>
+<stuans>5,12</stuans>
+<correct>5,12</correct>
+<time_taken>0.778000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(_, IDENT) returns false">3</id><querystr><![CDATA[if ifs; Select ifs such that Next*(_,1)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.816000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(IDENT, _) returns true">4</id><querystr><![CDATA[if ifs;while w; Select <ifs,w.stmt#> such that Next*(11,_)]]></querystr>
+<stuans>4 5,4 12,10 5,10 12</stuans>
+<correct>4 5,4 12,10 5,10 12</correct>
+<time_taken>1.117000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(IDENT, _) returns true">5</id><querystr><![CDATA[if ifs;while w; Select <ifs,w> such that Next*(3,_)]]></querystr>
+<stuans>4 5,4 12,10 5,10 12</stuans>
+<correct>4 5,4 12,10 5,10 12</correct>
+<time_taken>1.053000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(IDENT, _) returns false">6</id><querystr><![CDATA[while w; Select w such that Next*(15,_)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.842000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(IDENT, IDENT) returns true">7</id><querystr><![CDATA[procedure p; Select p such that Next*(2, 4)]]></querystr>
+<stuans>Bumblebee,Anya</stuans>
+<correct>Bumblebee,Anya</correct>
+<time_taken>0.895000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(IDENT, IDENT) returns true">8</id><querystr><![CDATA[if ifs;; Select ifs.stmt# such that Next*(9, 5)]]></querystr>
+<stuans>4,10</stuans>
+<correct>4,10</correct>
+<time_taken>1.156000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(IDENT, IDENT) returns true">9</id><querystr><![CDATA[procedure p; Select p.procName such that Next*(1, 8)]]></querystr>
+<stuans>Bumblebee,Anya</stuans>
+<correct>Bumblebee,Anya</correct>
+<time_taken>0.895000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(IDENT, IDENT) returns false">10</id><querystr><![CDATA[while w; Select w such that Next*(6,16)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.663000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(SYN, _)">11</id><querystr><![CDATA[assign a; Select a such that Next*(a,_)]]></querystr>
+<stuans>13,7,6,9,11,14</stuans>
+<correct>6,7,9,11,13,14</correct>
+<time_taken>0.740000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(SYN, SYN)">12</id><querystr><![CDATA[stmt s; while w; Select <s, w> such that Next*(s,w)]]></querystr>
+<stuans>1 5,1 12,4 5,5 5,3 5,2 12,3 12,10 12,11 12,13 12,4 12,12 12,6 5,7 5,2 5,9 5,8 5</stuans>
+<correct>1 5,2 5,3 5,4 5,5 5,6 5,7 5,8 5,9 5,1 12,2 12,3 12 4 12,10 12,11 12,12 12,13 12</correct>
+<time_taken>1.149000</time_taken>
+<failed>
+<missing>3 12 4 12</missing>
+<additional>3 12,4 12</additional>
+<summary>
+<expected>16</expected>
+<matched>15</matched>
+<missing>1</missing>
+<additional>2</additional>
+</summary>
+</failed>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(SYN, SYN)">13</id><querystr><![CDATA[if ifs; while w; Select <ifs, w> such that Next*(ifs,w)]]></querystr>
+<stuans>4 5,4 12,10 12</stuans>
+<correct>4 5,4 12,10 12</correct>
+<time_taken>1.009000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(SYN, SYN) no result">14</id><querystr><![CDATA[read r; if ifs; Select r such that Next*(ifs,r)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.855000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(SYN, IDENT)">15</id><querystr><![CDATA[stmt s;  Select <s> such that Next*(s,6)]]></querystr>
+<stuans>3,9,6,1,2,5,7,4,8</stuans>
+<correct>1,2,3,4,5,6,7,8,9</correct>
+<time_taken>0.841000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(SYN, IDENT) no result">16</id><querystr><![CDATA[assign a;  Select <a> such that Next*(a,2)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.817000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(IDENT, SYN)">17</id><querystr><![CDATA[assign a;  Select <a> such that Next*(13,a)]]></querystr>
+<stuans>15,13</stuans>
+<correct>13,15</correct>
+<time_taken>0.772000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnBoolean="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(IDENT, SYN) no result">18</id><querystr><![CDATA[if ifs;  Select BOOLEAN such that Next*(15,ifs)]]></querystr>
+<stuans>FALSE</stuans>
+<correct>FALSE</correct>
+<time_taken>0.771000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" UnnamedVar="1" SuchThat="1" CondNum="4" RelNum="1" comment="Select Next*(_, SYN)">19</id><querystr><![CDATA[if ifs;  Select ifs such that Next*(_,ifs)]]></querystr>
+<stuans>4,10</stuans>
+<correct>4,10</correct>
+<time_taken>0.795000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="1" SuchThat="1" CondNum="3" RelNum="1" comment="Select Next*(_, SYN) no result">20</id><querystr><![CDATA[read r; while w; Select r such that Next*(w,r)]]></querystr>
+<stuans></stuans>
+<correct></correct>
+<time_taken>0.852000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" Nextstar="5" SuchThat="1" CondNum="7" RelNum="5" comment="long query">21</id><querystr><![CDATA[while w; if if1, if2; assign a1, a2; stmt s1, s2; read r1, r2; Select <r1, r2> such that Next*(s1, s2) and Next*(if1, w) and Next*(1, 2) and Next*(5, 6) and Next*(2, 3)]]></querystr>
+<stuans>1 1,1 3,2 1,3 3,3 2,2 3,1 2,3 1,2 2</stuans>
+<correct>1 1,1 2,1 3,2 1,2 2,2 3,3 1,3 2,3 3</correct>
+<time_taken>2.450000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

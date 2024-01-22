@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="analysis.xsl"?>
+<test_results>
+<info>
+<name>single_clause</name><parsing_time_taken>0.723000</parsing_time_taken>
+</info>
+<queries>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="select if statements with a conditional variable">1</id><querystr><![CDATA[if ifs; while w; Select ifs pattern ifs(_,_,_)]]></querystr>
+<stuans>4,8,13</stuans>
+<correct>4,8,13</correct>
+<time_taken>0.376000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="select while statements with a conditional variable">2</id><querystr><![CDATA[if ifs; while w; Select w pattern w(_,_)]]></querystr>
+<stuans>9,12</stuans>
+<correct>9,12</correct>
+<time_taken>0.370000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="select if statements and variable pair">3</id><querystr><![CDATA[if ifs; while w;variable v; Select <ifs, v> pattern ifs(v,_,_)]]></querystr>
+<stuans>8 x,4 x,13 b,13 a</stuans>
+<correct>4 x,8 x,13 b,13 a</correct>
+<time_taken>0.384000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="select if statements with given variable">5</id><querystr><![CDATA[if ifs; while w; Select ifs pattern ifs("x",_,_)]]></querystr>
+<stuans>4,8</stuans>
+<correct>4,8</correct>
+<time_taken>0.417000</time_taken>
+<passed/>
+</query>
+<query>
+<id ReturnTuple="1" UnnamedVar="1" Pattern="1" CondNum="3" RelNum="0" comment="select while statements with given variable">6</id><querystr><![CDATA[if ifs; while w; Select w pattern w("x",_)]]></querystr>
+<stuans>9,12</stuans>
+<correct>9,12</correct>
+<time_taken>0.458000</time_taken>
+<passed/>
+</query>
+</queries>
+</test_results>

@@ -1,0 +1,65 @@
+1 - Select Calls(p, _) when unrestricted is True
+procedure p;
+Select p.procName such that Calls (_,_)
+Bumblebee, Anya, Third, Fourth
+5000
+2 - Select Calls(_,IDENT) is true
+procedure p;
+Select p.procName such that Calls(_,"Fourth")
+Bumblebee, Anya, Third, Fourth
+5000
+3 - Select Calls(_,IDENT) is false
+procedure p;
+Select p.procName such that Calls(_,"Bumblebee")
+none
+5000
+4 - Select Boolean Calls(IDENT,_) is true
+procedure p;
+Select BOOLEAN such that Calls("Anya",_)
+TRUE
+5000
+5 - Select Boolean Calls(IDENT,_) is false
+procedure p;
+Select BOOLEAN such that Calls("Fourth",_)
+FALSE
+5000
+6 - Select Calls(IDENT,IDENT) is true
+procedure p;
+Select p such that Calls("Anya","Third")
+Bumblebee, Anya, Third, Fourth
+5000
+7 - Select Calls(IDENT,IDENT) is false
+procedure p;
+Select p such that Calls("Fourth","Third")
+none
+5000
+8 - Select Calls(_,PROC-SYN) has a result
+procedure p;
+Select p such that Calls(_,p)
+Anya, Third, Fourth
+5000
+9 - Calls(_,PROC-SYN) has no result
+procedure p;
+Select p such that Calls(_,p) and Calls(_,"Bumblebee")
+none
+5000
+10 - Calls(IDENT,PROC-SYN) has result
+procedure p;
+Select p.procName such that Calls("Third",p)
+Fourth
+5000
+11 - Calls(IDENT,PROC-SYN) has no result
+procedure p;
+Select p.procName such that Calls("Fourth",p)
+none
+5000
+12 - Calls(PROC-SYN,_) has result
+procedure p;
+Select p.procName such that Calls(p,_)
+Bumblebee, Anya, Third
+5000
+13 - Calls(PROC-SYN,_) has no result
+procedure p;variable v;
+Select p.procName such that Calls(p,_) with p.procName=v.varName
+none
+5000

@@ -1,0 +1,109 @@
+1 - Select Next*(_, _) returns true
+if ifs;
+Select ifs such that Next*(_,_)
+4, 10
+5000
+2 - Select Next*(_, IDENT) returns true
+while w;
+Select w such that Next*(_,8)
+5, 12
+5000
+3 - Select Next*(_, IDENT) returns false
+if ifs;
+Select ifs such that Next*(_,1)
+none
+5000
+4 - Select Next*(IDENT, _) returns true
+if ifs;while w;
+Select <ifs,w.stmt#> such that Next*(11,_)
+4 5, 4 12, 10 5, 10 12
+5000
+5 - Select Next*(IDENT, _) returns true
+if ifs;while w;
+Select <ifs,w> such that Next*(3,_)
+4 5, 4 12, 10 5, 10 12
+5000
+6 - Select Next*(IDENT, _) returns false
+while w;
+Select w such that Next*(15,_)
+none
+5000
+7 - Select Next*(IDENT, IDENT) returns true
+procedure p;
+Select p such that Next*(2, 4)
+Bumblebee, Anya
+5000
+8 - Select Next*(IDENT, IDENT) returns true
+if ifs;
+Select ifs.stmt# such that Next*(9, 5)
+4, 10
+5000
+9 - Select Next*(IDENT, IDENT) returns true
+procedure p;
+Select p.procName such that Next*(1, 8)
+Bumblebee, Anya
+5000
+10 - Select Next*(IDENT, IDENT) returns false
+while w;
+Select w such that Next*(6,16)
+none
+5000
+11 - Select Next*(SYN, _)
+assign a;
+Select a such that Next*(a,_)
+6, 7, 9, 11, 13, 14
+5000
+12 - Select Next*(SYN, SYN)
+stmt s; while w;
+Select <s, w> such that Next*(s,w)
+1 5, 2 5, 3 5, 4 5, 5 5, 6 5, 7 5, 8 5, 9 5, 1 12, 2 12, 3 12, 4 12, 10 12, 11 12, 12 12, 13 12
+5000
+13 - Select Next*(SYN, SYN)
+if ifs; while w;
+Select <ifs, w> such that Next*(ifs,w)
+4 5, 4 12, 10 12
+5000 
+14 - Select Next*(SYN, SYN) no result
+read r; if ifs;
+Select r such that Next*(ifs,r)
+none
+5000
+15 - Select Next*(SYN, IDENT)
+stmt s; 
+Select <s> such that Next*(s,6)
+1, 2, 3, 4, 5, 6, 7, 8, 9
+5000
+16 - Select Next*(SYN, IDENT) no result
+assign a; 
+Select <a> such that Next*(a,2)
+none
+5000
+17 - Select Next*(IDENT, SYN)
+assign a; 
+Select <a> such that Next*(13,a)
+13, 15
+5000
+18 - Select Next*(IDENT, SYN) no result
+if ifs; 
+Select BOOLEAN such that Next*(15,ifs)
+FALSE
+5000
+19 - Select Next*(_, SYN)
+if ifs; 
+Select ifs such that Next*(_,ifs)
+4, 10
+5000
+20 - Select Next*(_, SYN) no result
+read r; while w;
+Select r such that Next*(w,r)
+none
+5000
+21 - long query
+while w; if if1, if2; assign a1, a2; stmt s1, s2; read r1, r2;
+Select <r1, r2> such that Next*(s1, s2) and Next*(if1, w) and Next*(1, 2) and Next*(5, 6) and Next*(2, 3)
+1 1, 1 2, 1 3, 2 1, 2 2, 2 3, 3 1, 3 2, 3 3
+5000
+22 - Select Next*(_, IDENT) returns true
+stmt s1, s2;
+Select <s1,s2> such that Next(s1,s2)
+1 2,10 11,10 14,11 12,12 13,12 15,13 12,14 15,2 3,3 4,4 10,4 5,5 15,5 6,6 7,7 8,8 9,9 5

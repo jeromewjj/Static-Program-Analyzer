@@ -1,0 +1,130 @@
+1 - Select Affects(_,_) is true
+
+Select BOOLEAN such that Affects(_,_)
+TRUE
+5000
+2 - Select Affects(_,IDENT) is true
+
+Select BOOLEAN such that Affects(_,7)
+TRUE
+5000
+3 - Select Affects(_,IDENT) is false
+
+Select BOOLEAN such that Affects(_,1)
+FALSE
+5000
+4 - Select Affects(IDENT,_) is true
+
+Select BOOLEAN such that Affects(6,_)
+TRUE
+5000
+5 -  Select Affects(IDENT,_) is false
+
+Select BOOLEAN such that Affects(10,_)
+FALSE
+5000
+6 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(6,6)
+FALSE
+5000
+7 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(6,7)
+TRUE
+5000
+8 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(7,6)
+FALSE
+5000
+9 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(11,13)
+TRUE
+5000
+10 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(11,15)
+FALSE
+5000
+11 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(17,20)
+TRUE
+5000
+12 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(17,22)
+TRUE
+5000
+13 - Select Affects(IDENT,IDENT) is true
+
+Select BOOLEAN such that Affects(22, 23)
+TRUE
+5000
+14 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(22,25)
+FALSE
+5000
+15 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(21,28)
+FALSE
+5000
+16 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(7,17)
+FALSE
+5000
+17 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(6,9)
+FALSE
+5000
+18 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(1,2)
+FALSE
+5000
+19 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(31,30)
+FALSE
+5000
+20 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(14,15)
+FALSE
+5000
+21 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(17,19)
+FALSE
+5000
+23 - SelectAffects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(5,6)
+FALSE
+5000
+24 - Select Affects(IDENT,IDENT) is false
+
+Select BOOLEAN such that Affects(7,11)
+FALSE
+5000
+25 - Select Affects(_,IDENT) is false
+
+Select BOOLEAN such that Affects(_,1)
+FALSE
+5000
+26 - Select Affects(_,IDENT) is false
+
+Select BOOLEAN such that Affects(_,6)
+FALSE
+5000
+27 - Select Affects(_,SYN) is true
+assign a;
+Select a such that Affects(_,a)
+7, 13, 17, 20, 22, 23, 27, 28, 30
+5000
